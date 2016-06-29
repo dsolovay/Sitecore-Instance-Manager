@@ -126,7 +126,7 @@ namespace SIM
 
       var folder = Path.Combine(TempFolder, assemblyName);
       var filePath = Path.Combine(folder, executableName);
-      if (File.Exists(filePath))
+      if (File.Exists(filePath) || Directory.Exists(filePath))
       {
         return filePath;
       }
@@ -153,7 +153,7 @@ namespace SIM
           fs.ExtractAll(folder);
         }
 
-        Assert.IsTrue(File.Exists(filePath), "The {0} file path doesn't exist after successful extracting {1} package into {2} folder", filePath, tmp, folder);
+        Assert.IsTrue(File.Exists(filePath) || Directory.Exists(filePath), "The {0} file path doesn't exist after successful extracting {1} package into {2} folder", filePath, tmp, folder);
 
         if (File.Exists(tmp))
         {
