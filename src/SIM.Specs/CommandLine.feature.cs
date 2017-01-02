@@ -78,9 +78,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.Then("I can navigate to \'TestExample\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
-    testRunner.Then("I see the Sitecore Welcome page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see the Sitecore Welcome page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
-    testRunner.Then("Delete \'TestExample\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Delete \'TestExample\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

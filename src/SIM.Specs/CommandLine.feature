@@ -8,5 +8,5 @@ Scenario: Create instance
 	Given No Sitecore intance named 'TestExample' exists
 	When I create 'TestExample' with the command tool
 	Then I can navigate to 'TestExample'
-    Then I see the Sitecore Welcome page
-    Then Delete 'TestExample'
+	Then I see the Sitecore Welcome page
+	Then Delete 'TestExample'
