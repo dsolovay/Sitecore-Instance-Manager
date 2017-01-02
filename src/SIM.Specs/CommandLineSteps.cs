@@ -73,17 +73,16 @@ namespace SIM.Specs
         private static void RunSimCommand(string arguments)
         {
             Process p = new Process();
-            p.StartInfo.UseShellExecute = true;
-            p.StartInfo.RedirectStandardOutput = false;
-            p.StartInfo.FileName = "SIM.exe";
-            p.StartInfo.WorkingDirectory = @"..\Sim.Client\bin";
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.FileName = $@"{Environment.CurrentDirectory}\..\Sim.Client\bin\SIM.exe";
             p.StartInfo.Arguments = arguments;
             p.Start();
-            //string output = p.StandardOutput.ReadToEnd();
+            string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
             p.Close();
             Console.WriteLine("Command output:");
-            //Console.WriteLine(output);
+            Console.WriteLine(output);
         }
         #endregion
 
