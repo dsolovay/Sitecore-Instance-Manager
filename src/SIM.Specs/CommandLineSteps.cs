@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
@@ -72,7 +73,7 @@ namespace SIM.Specs
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.FileName = $@"{Environment.CurrentDirectory}\..\Sim.Client\bin\SIM.exe";
+            p.StartInfo.FileName = $@"{GetSolutionDirectory()}\Sim.Client\bin\SIM.exe";
             p.StartInfo.Arguments = arguments;
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
@@ -81,7 +82,18 @@ namespace SIM.Specs
             Console.WriteLine("Command output:");
             Console.WriteLine(output);
         }
-        #endregion
+
+      private static string GetSolutionDirectory()
+      {
+        var dir = new DirectoryInfo(Environment.CurrentDirectory);
+        while (!dir.GetFiles("*.sln").Any())
+        {
+          dir = dir.Parent;
+        }
+        return dir.FullName;
+      }
+
+      #endregion
 
     }
 }
