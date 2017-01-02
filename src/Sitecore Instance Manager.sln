@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIM.Tool", "SIM.Tool\SIM.Tool.csproj", "{7479AF0F-C156-4844-AEC1-778FF1B854C8}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CLI Client", "CLI Client", "{78293D89-3FC2-403D-BF5F-1C4AF0DEF153}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIM.Client", "SIM.Client\SIM.Client.csproj", "{77C4E17F-5C43-4334-A547-44C0E490CB8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIM.Specs", "SIM.Specs\SIM.Specs.csproj", "{3399F0D5-BCB8-409E-A077-2A2C02CC2018}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +167,18 @@ Global
 		{77C4E17F-5C43-4334-A547-44C0E490CB8A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{77C4E17F-5C43-4334-A547-44C0E490CB8A}.Release|x86.ActiveCfg = Release|Any CPU
 		{77C4E17F-5C43-4334-A547-44C0E490CB8A}.Release|x86.Build.0 = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Debug|x86.Build.0 = Debug|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|x86.ActiveCfg = Release|Any CPU
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +197,7 @@ Global
 		{A124D359-B9BF-44F4-98CB-C40D3D490839} = {AD1198CF-70E6-415E-BF0E-995E95FF7179}
 		{78293D89-3FC2-403D-BF5F-1C4AF0DEF153} = {AD1198CF-70E6-415E-BF0E-995E95FF7179}
 		{77C4E17F-5C43-4334-A547-44C0E490CB8A} = {78293D89-3FC2-403D-BF5F-1C4AF0DEF153}
+		{3399F0D5-BCB8-409E-A077-2A2C02CC2018} = {27597389-98A2-4AF7-8629-DC761E20EEDC}
 	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
