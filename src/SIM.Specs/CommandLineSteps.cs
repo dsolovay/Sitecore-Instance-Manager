@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -22,32 +21,18 @@ namespace SIM.Specs
             }
         }
 
-
         [Given(@"No Sitecore intance named '(.*)' exists")]
         public void GivenNoSitecoreIntanceNamedExists(string siteName)
         {
             ThenDelete(siteName);
             Assert.IsFalse(SiteFound(siteName));
         }
-
-        private bool SiteFound(string siteName)
-        {
-            driver.Navigate().GoToUrl($"http://{siteName}/");
-            bool nameNotResolved = driver.PageSource.Contains("ERR_NAME_NOT_RESOLVED");
-
-            // HACK There is a moment in the test execution where IIS handles the page not found, rather than chrome.
-            bool iisPage = driver.FindElementsByTagName("a").Any(
-                e => (e.GetAttribute("href") ?? "").Contains("go.microsoft.com/fwlink")); 
-
-            return !nameNotResolved && !iisPage;
-        }
-
+ 
         [When(@"I create '(.*)' with the command tool")]
         public void WhenICreateWithTheCommandTool(string siteName)
         {
             RunSimCommand($"install --name {siteName}");
         }
-        
 
         [Then(@"I can navigate to '(.*)'")]
         public void ThenICanNavigateTo(string siteName)
@@ -69,8 +54,20 @@ namespace SIM.Specs
             Assert.IsFalse(SiteFound(siteName));
         }
 
-        #region Private Methods
-        private static void RunSimCommand(string arguments)
+    #region Private Methods
+    private bool SiteFound(string siteName)
+    {
+      driver.Navigate().GoToUrl($"http://{siteName}/");
+      bool nameNotResolved = driver.PageSource.Contains("ERR_NAME_NOT_RESOLVED");
+
+      // HACK There is a moment in the test execution where IIS handles the page not found, rather than chrome.
+      bool iisPage = driver.FindElementsByTagName("a").Any(
+          e => (e.GetAttribute("href") ?? "").Contains("go.microsoft.com/fwlink"));
+
+      return !nameNotResolved && !iisPage;
+    }
+
+    private static void RunSimCommand(string arguments)
         {
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
